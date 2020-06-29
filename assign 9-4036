@@ -1,0 +1,51 @@
+f=open("xy.txt","w")#read the entire txt file
+a=["hii\n" 
+ "how\n"
+ "r\n"
+ "u\n"]
+f.writelines(a)
+f.close()
+
+f=open("xy.txt","r")
+print(f.read())
+f.close()
+
+a=open("xy.txt","r")#to read1st n lines of a file
+number_of_lines=3
+for i in range(number_of_lines):
+	line=a.readline()
+	print(line)
+	
+f=open("xy.txt","a")#to append txt and read the txt in afile
+f.write("\ni m good\n")
+f.close()
+f=open("xy.txt","r")
+print(f.read())
+print()
+f.close()
+
+def LastNLines(f,n):#read last n life of file
+    with open(f) as file:
+        print('Last',n,"lines from file:",f)
+        for line in (file.readlines() [-n:]):
+            print(line, end='')
+name=input("enter the file name:" )
+n= int(input("no of last lines to read:"))
+try:
+    LastNLines(name,n)
+except:
+    print("file error....")
+    
+ def read(a):#to read a file line byline store into a variable
+        with open (a) as file:
+                cse=file.readlines()
+                print(cse)
+a=input("enter the file name:")
+read(a)
+
+def read(a):#to read a file line by line and store into a list
+        with open(a) as file:     
+                list = file.readlines()
+                print(list)
+a=input("enter the file name:")
+read(a)
